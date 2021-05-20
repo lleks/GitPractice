@@ -181,6 +181,19 @@
 >
 >`git fetch origin`
 
+>**View existing repositories**
+>
+>`git remote -v`
+
 >**Push to GitHub**
 >
 >`git push origin`
+
+>**Clone project from GitHub**
+>
+>`git clone git@github.com:lleks/GitPractice.git`
+
+
+
+
+
