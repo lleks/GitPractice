@@ -1,185 +1,186 @@
-# hello-world
-## Hello World repository for Git tutorial
-Git version
+# Hello World repository for Git tutorial
 
-`git --version`
--
-Configure Git
+>**Git version**
+>
+> `git --version`
 
-`git config --global user.name "Alex"`
+>**Configure Git**
+>
+>`git config --global user.name "Alex"`
+>
+>`git config --global user.email "Alex@gmail.com"`
 
-`git config --global user.email "Alex@gmail.com"`
--
-Generating an SSH Key Pair
+>**Generating an SSH Key Pair**
+>
+>`ssh-keygen -t rsa -b 4096 -C "Alex@gmail.com"`
+>
+>`ssh-keygen`
+>
+>Note:
+>1. Add this SSH key pair to the SSH-Agent
+>
+>`ssh-add /Users/user/.ssh/id_rsa`
+>
+>2. Copy the SSH Public Key
+>
+>`clip < /Users/user/.ssh/id_rsa.pub`
+>
+>3. Test SSH Connection to GitHub
+>
+>`ssh -T git@github.com`
 
-`ssh-keygen -t rsa -b 4096 -C "Alex@gmail.com"`
 
-`ssh-keygen`
+>**Creating Git Folder**
+>
+>`mkdir GitPractice` Create a new directory "GitPractice":
+>
+>`cd GitPractice` Changes the current working directory
 
-Note:
-1. Add this SSH key pair to the SSH-Agent
+>**Initialize Git**
+>
+>`git init`
 
-`ssh-add /Users/user/.ssh/id_rsa`
+>**Create new file**
+>
+>`touch index.html`
 
-2. Copy the SSH Public Key
+>**Edit file and save**
+>
+>`vim index.html`
 
-`clip < /Users/user/.ssh/id_rsa.pub`
+>**How to exit Vim:**
+>
+>`:x` or `:wq` 	- save and exit
+>
+>`:w` 		- save changes
+>
+>`:q` 		- exit from Vim if nothing was changed
+>
+>`:q!`		- exit Vim and discard any changes
 
-3. Test SSH Connection to GitHub
+>**After new file wasa dded**
+>
+>`git status`
+>
+>`git status --short`
+>
+>Note: Short status answer flags are:
+>
+>`??` 	- Untracked files
+>
+>`A` 	- Files added to stage
+>
+>`M` 	- Modified files
+>
+>`D` 	- Deleted files
 
-`ssh -T git@github.com`
--
-Creating Git Folder
+>**Add file to the Staging Environment**
+>
+>`git add index.html`
 
-`mkdir GitPractice` Create a new directory "GitPractice":
+>**Git Add More than One File**
+>
+>`git add --all`
+>
+>`git add -A`
+>
+>`git add *`
+>
+>`git add .`
 
-`cd GitPractice` Changes the current working directory
--
-Initialize Git
+>**Adding commits**
+>
+>`git commit -m "First release of Hello World!"`	(-m means "message")
 
-`git init`
--
-Create new file
+>**Git Commit without Stage**
+>
+>`git commit -a -m "Updated index.html with a new line"`
 
-`touch index.html`
--
-Edit file and save
+>**Rollback file to previous commit state**
+>
+>`git restore index.html`
+>
+>`git restore --staged index.html` 
+>
+>`git checkout index.html`
 
-`vim index.html`
+>**Changes for the last commit shown**
+>
+>`git diff`
+>
+>`git diff --staget`	Changes for staged environment shown
 
-How to exit Vim:
+>**Git Commit Log** (to view the history of commits for a repository)
+>
+>`git log`
+>
+>`git log -p`
 
-`:x` or `:wq` 	- save and exit
+>**Show info about commit**
+>
+>`git show 0936bcf7c5bbb4fcfe8b4e1a2f29e018b0d7a301`
 
-`:w` 		- save changes
+>**Git Help**
+>
+>`git command -help`		All the available options for the specific command are shown
+>
+>`git help --all`		All possible commands are shown
+>
+>Note:
+>
+>`SHIFT + G`	 to jump the end of the list
+>
+>`q`		 to exit the view
 
-`:q` 		- exit from Vim if nothing was changed
+>**Create a new branch**
+>
+>`git branch hello-world-images`		(a new branch called "hello-world-images" was created)
+>
+>`git checkout -b hello-world-images`	(create, and move to a new branch with the name "hello-world-images")
 
-`:q!`		- exit Vim and discard any changes
--
-After new file wasa dded
+>Let's confirm that we have created a new branch
+>
+>`git branch`
+>
+>`git branch -a`		all local and remote branches shown
+>
+>`git branch -r`		for remote branches only
 
-`git status`
+>**Moving from the current branch, to the one specified at the end of the command**
+>
+>`git checkout hello-world-images`
 
-`git status --short`
+>**witching Between Branches**
+>
+>`git checkout master`
 
-Note: Short status answer flags are:
+>**Merge Branches**
+>
+>`git checkout master`		we need to change to the master branch
+>
+>`git merge emergency-fix`	now we merge the current branch (master) with emergency-fix
 
-`??` 	- Untracked files
+>**Deleted branch**
+>
+>`git branch -d emergency-fix`
+>
+>`git branch -D emergency-fix`		if changes was not merged in any other bunch
 
-`A` 	- Files added to stage
+>**Move HEAD and current branch to selected commit** (previous commit was not show anymore)
+>
+>`git reset --hard 0936bcf7c5bbb4fcfe8b4e1a2f29e018b0d7a301` 
 
-`M` 	- Modified files
+>**Push Local Repository to GitHub**
+>
+>1. Create a Repository on GitHub
+>2. Copy the Repository URL
+>3. `git remote add origin https://github.com/....`
+>4. `git push --set-upstream origin master`		(push our master branch to the origin url)
 
-`D` 	- Deleted files
--
-Add file to the Staging Environment
+>**Git Fetch** (gets all the change history of a tracked branch)
+>
+>`git fetch origin`
 
-`git add index.html`
--
-Git Add More than One File
-
-`git add --all`
-
-`git add -A`
-
-`git add *`
-
-`git add .`
--
-Adding commits
-
-`git commit -m "First release of Hello World!"`	(-m means "message")
--
-Git Commit without Stage
-
-`git commit -a -m "Updated index.html with a new line"`
--
-Rollback file to previous commit state
-
-`git restore index.html`
-
-`git restore --staged index.html` 
-
-`git checkout index.html`
--
-Changes for the last commit shown
-
-`git diff`
-
-`git diff --staget`	Changes for staged environment shown
--
-Git Commit Log (To view the history of commits for a repository)
-
-`git log`
-
-`git log -p`
--
-Show info about commit
-
-`git show 0936bcf7c5bbb4fcfe8b4e1a2f29e018b0d7a301`
--
-Git Help
-
-`git command -help`		All the available options for the specific command are shown
-
-`git help --all`		All possible commands are shown
-
-Note:
-
-`SHIFT + G`	 to jump the end of the list
-
-`q`		 to exit the view
--
-Create a new branch
-
-`git branch hello-world-images`		(a new branch called "hello-world-images" was created)
-
-`git checkout -b hello-world-images`	(create, and move to a new branch with the name "hello-world-images")
--
-Let's confirm that we have created a new branch
-
-`git branch`
-
-`git branch -a`		all local and remote branches shown
-
-`git branch -r`		for remote branches only
--
-Moving from the current branch, to the one specified at the end of the command
-
-`git checkout hello-world-images`
--
-Switching Between Branches
-
-`git checkout master`
--
-Merge Branches
-
-`git checkout master`		we need to change to the master branch
-
-`git merge emergency-fix`	now we merge the current branch (master) with emergency-fix
--
-Deleted branch
-
-`git branch -d emergency-fix`
-
-`git branch -D emergency-fix`		if changes was not merged in any other bunch
--
-Move HEAD and current branch to selected commit (previous commit was not show anymore)
-
-`git reset --hard 0936bcf7c5bbb4fcfe8b4e1a2f29e018b0d7a301` 
--
-Push Local Repository to GitHub
-
-1. Create a Repository on GitHub
-2. Copy the Repository URL
-3. `git remote add origin https://github.com/....`
-4. `git push --set-upstream origin master`		(push our master branch to the origin url)
---
-Git Fetch (gets all the change history of a tracked branch)
-
-`git fetch origin`
--
-Push to GitHub
-
-`git push origin`
+>**Push to GitHub**
+>
+>`git push origin`
