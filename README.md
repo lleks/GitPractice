@@ -58,7 +58,7 @@
 >
 >`:q!`		- exit Vim and discard any changes
 
->**After new file wasa dded**
+>**After new file wasa added**
 >
 >`git status`
 >
@@ -108,7 +108,7 @@
 >
 >`git diff`
 >
->`git diff --staget`	Changes for staged environment shown
+>`git diff --staged`	Changes for staged environment shown
 
 >**Git Commit Log** (to view the history of commits for a repository)
 >
