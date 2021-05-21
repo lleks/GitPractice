@@ -205,4 +205,5 @@
 >**Send branch on GitHub with tag**
 >
 >`git push origin v1`
+>
 >`git push --tags` (for all tags)
