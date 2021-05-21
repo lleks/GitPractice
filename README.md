@@ -150,7 +150,7 @@
 >
 >`git checkout hello-world-images`
 
->**witching Between Branches**
+>**Switching Between Branches**
 >
 >`git checkout master`
 
