@@ -193,7 +193,16 @@
 >
 >`git clone git@github.com:lleks/GitPractice.git`
 
+>**Add tag on commit** (v1 tag name)
+>
+>`git tag v1`
+>`git tag -a v1 -m "new tag"
 
+>**View all tags**
+>
+>`git tag`
 
-
-
+>**Send branch on GitHub with tag**
+>
+>`git push origin v1`
+>`git push --tags` (for all tags)
