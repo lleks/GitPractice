@@ -196,7 +196,8 @@
 >**Add tag on commit** (v1 tag name)
 >
 >`git tag v1`
->`git tag -a v1 -m "new tag"
+>
+>`git tag -a v1 -m "new tag"`
 
 >**View all tags**
 >
