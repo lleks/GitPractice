@@ -208,3 +208,62 @@
 >`git push origin v1`
 >
 >`git push --tags` (for all tags)
+
+>**Git GitHub Fork and Pull Request**
+>
+>1 Fork a Repository (Now we have our own copy of a Repository in our GitHub page)
+>
+>2 Move back to the original repository, and `Clone` it to local repository in our PC
+>
+>`git clone https://github.co...`
+>
+>Navigate to the new directory, and check the `status`:
+>
+>`cd w3schools-test.gi...`
+>
+>`git status`
+>
+>Check the `log` to confirm that we have the full repository data:
+>
+>`git log` (now we have a full copy of the original repository)
+>
+>3 Configuring Remotes
+>Basically, we have a full copy of a repository, whose `origin` we are not allowed to make changes to.
+>
+>Let's see how the `remotes` of this Git is set up:
+>
+>`git remote -v`
+>
+>We see that `origin` is set up to the original repository, we also want to add our own `fork`.
+>
+>First, we `rename` the original `origin` `remote`:
+>
+>`git remote rename origin upstream`
+>
+>`git remote -v`
+>
+>Then `clone` our own fork
+>
+>And add that as `origin`:
+>
+>`git remote add origin https://github.com/lle...`
+>
+>`git remote -v`
+>
+>Note: According to Git naming conventions, it is recommended to name your own repository origin, and the one you forked for upstream
+>
+>Now we have 2 remotes:
+> - `origin` - our own `fork`, where we have read and write access
+> - `upstream` - the original, where we have read-only access
+>
+>4 Make some changes to the code in our local Git
+>
+>5 Now we `push` them to our GitHub `fork`:
+>
+>`commit` the changes:
+>
+>`git push origin`
+>
+>6 Go to our forked GitHub project page, the repository has a new commit. We can send a Pull Request to the original repository.
+
+
