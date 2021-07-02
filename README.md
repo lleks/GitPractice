@@ -177,6 +177,7 @@
 >3. `git branch -M main` (master to main)
 >4. `git remote add origin https://github.com/....`
 >5. `git push -u origin main`
+>
 >Or:
 >1. Create a Repository on GitHub
 >2. Copy the Repository URL
