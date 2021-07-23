@@ -106,9 +106,9 @@
 
 >**Changes for the last commit shown**
 >
->`git diff`
+>`git diff` - changes between working directory and stage
 >
->`git diff --staged`	Changes for staged environment shown
+>`git diff --staged` -	changes between stage and repository are shown
 
 >**Git Commit Log** (to view the history of commits for a repository)
 >
