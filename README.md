@@ -102,23 +102,41 @@
 >
 >`git restore --staged index.html` 
 >
->`git checkout index.html`
+>`git checkout -- index.html` 
 
 >**Changes for the last commit shown**
 >
 >`git diff` - changes between working directory and stage
 >
+>`fit diff --color-words` - changed elements are shown in color
+>
 >`git diff --staged` -	changes between stage and repository are shown
+>
+>`git diff FILENAME` - file changes in shown
+
+>**Unstage files**
+>
+>`git reset HEAD FILENAME`
 
 >**Git Commit Log** (to view the history of commits for a repository)
 >
 >`git log`
 >
 >`git log -p`
+>
+>`git log --oneline` - commit message shown only
 
 >**Show info about commit**
 >
 >`git show 0936bcf7c5bbb4fcfe8b4e1a2f29e018b0d7a301`
+
+>**Show difference between commits**
+>
+>`git diff 0936bcf7c5bbb4fcfe8b4e1a2f29e018b0d7a301..45g36f5rr6y4bghy434g5323gp7623f70a13e1`
+
+>**Amend commits**
+>
+>`git commit --amend -m "message to commit"` - all changes goes to the last existing commit, new commit does not created
 
 >**Git Help**
 >
