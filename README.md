@@ -1,4 +1,4 @@
-# Hello World repository for Git tutorial
+# "Hello, World!" repository for Git tutorial
 
 >**Git version**
 >
