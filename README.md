@@ -108,7 +108,7 @@
 >
 >`git diff` - changes between working directory and stage
 >
->`fit diff --color-words` - changed elements are shown in color
+>`git diff --color-words` - changed elements are shown in color
 >
 >`git diff --staged` -	changes between stage and repository are shown
 >
